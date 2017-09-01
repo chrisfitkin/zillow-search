@@ -10,22 +10,22 @@ import './App.css';
 class App extends Component {
   // Initialize state
   state = { 
-    content: [],
+    content: "Enter your address above to search for information.",
     searchText: "",
   }
 
   // Fetch passwords after first mount
   componentDidMount() {
-    this.getContent();
+    // this.getContent();
   }
 
-  getContent = () => {
+  getContent = (address) => {
     // Get the contents and store them in state
-    fetch('/api/chris')
+    fetch(`/api/chris/${address}`)
       .then(res => res.json())
       .then(data => {
         console.log('content', data);
-        this.setState({ content: data.message })
+        this.setState({ content: data })
       })
       .catch(e => {
         console.log('error', e);
@@ -62,15 +62,9 @@ class App extends Component {
                 onChange={this.onSearchBarChange}
                 onNewRequest={this.onSearchBarNewRequest}
               />
-              <h1>Content:</h1>
               <ul className="content">
                 {content}
-              </ul>
-              <button
-                className="more"
-                onClick={this.getContent}>
-                Get Content
-              </button>        
+              </ul>     
             </div>
           ) : (
             // Render a helpful message otherwise
