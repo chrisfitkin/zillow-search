@@ -3,7 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from '../AppBar/AppBar';
 import SearchBar from '../SearchBar/SearchBar';
-import LinearProgress from 'material-ui/LinearProgress';
+import CircularProgress from 'material-ui/CircularProgress';
 
 import './App.css';
 
@@ -61,20 +61,23 @@ class App extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme()}>
           <div>
             <AppBar />
-            <SearchBar
-              searchText={this.state.searchText}
-              onChange={this.onSearchBarChange}
-              onNewRequest={this.onSearchBarNewRequest}
-            />
-            { this.state.fetching && 
-              <LinearProgress 
-                mode="indeterminate" 
-                style={{ margin: '10px', width: 'auto' }} 
-              /> }
             <div className="content">
-              {content.length ?
-                content :
-                "Enter your address above to search for information."}
+              <SearchBar
+                searchText={this.state.searchText}
+                onChange={this.onSearchBarChange}
+                onNewRequest={this.onSearchBarNewRequest}
+              />
+              { this.state.fetching ?
+                <CircularProgress 
+                  mode="indeterminate" 
+                  style={{ margin: '10px', width: 'auto' }} 
+                  size={100} 
+                  thickness={5} 
+                /> : 
+                content.length ?
+                  content :
+                  "Enter your address above to search for information."
+              }
             </div>     
           </div>
         </MuiThemeProvider>

@@ -3,6 +3,7 @@ import React from 'react';
 // import GooglePlaceAutocomplete from 'material-ui-places';
 import GooglePlaceAutocomplete from '../GooglePlacesAutocomplete/GooglePlacesAutocomplete';
 
+
 const SearchBar = (props) => {
 
   const { searchText, onChange, onNewRequest } = props;
@@ -15,6 +16,7 @@ const SearchBar = (props) => {
       searchText={searchText}
       onChange={onChange}
       onNewRequest={onNewRequest}
+      fullWidth={true}
     />
   );
 };
