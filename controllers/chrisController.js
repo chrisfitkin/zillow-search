@@ -1,9 +1,13 @@
 "use strict";
 
-const get = function(req, res) {
-  res.json({'message': 'NOT IMPLEMENTED: GET /chris'});
+const Chris = require("../models/chris");
+
+const getAddress = async function(req, res) {
+  const { params: { address } } = req;
+  const data = await Chris.read(address);
+  res.json(data);
 }
 
 module.exports = {
-  get
+  getAddress
 }

@@ -7,7 +7,7 @@ const router = express.Router();
 const chrisController = require('../controllers/chrisController');
 
 // Chris Routes
-router.get('/chris', chrisController.get);
+router.get('/chris/:address', chrisController.getAddress);
 
 // Export routes
 module.exports = router;
