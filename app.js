@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 });
 
 // Register custom routes
-app.use('/api', routes);
+app.use('/api/v0', routes);
 
 // Serve React application using index.html
 app.get('*', (req, res) => {

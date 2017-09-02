@@ -1,11 +1,12 @@
 {
-  "name": "rando",
+  "name": "zillow-cf",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "keywords": [],
@@ -14,7 +15,10 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
-    "password-generator": "^2.1.0"
+    "password-generator": "^2.1.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

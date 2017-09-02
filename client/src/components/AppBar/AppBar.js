@@ -11,8 +11,10 @@ const styles = {
 function SimpleAppBar(props) {
   return (
     <div className={styles.root}>
-      <AppBar title="Chris App">
-      </AppBar>
+      <AppBar 
+        title="Zillow Reader"
+        iconStyleLeft={{ display: 'none' }}
+      />
     </div>
   );
 }

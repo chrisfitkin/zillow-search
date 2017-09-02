@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "async-request": "^1.2.0",
     "material-ui": "^0.19.0",
     "material-ui-places": "^1.1.7",
     "react": "^15.6.1",

@@ -4,10 +4,10 @@ const express = require('express');
 const router = express.Router();
 
 // Require controllers
-const chrisController = require('../controllers/chrisController');
+const zillowController = require('../controllers/zillowController');
 
 // Chris Routes
-router.get('/chris/:address', chrisController.getAddress);
+router.get('/zillow/:address/:cityStateZip', zillowController.getAddressInfo);
 
 // Export routes
 module.exports = router;
