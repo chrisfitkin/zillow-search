@@ -21,7 +21,7 @@ class App extends Component {
   defaultState = this.state;
 
   componentDidMount() {
-    this.getZillowData('939 S Pepper St', 'Anaheim, CA, 92802');
+    // this.getZillowData('939 S Pepper St', 'Anaheim, CA, 92802'); // Default data for testing
   }
   
   // API request
@@ -30,7 +30,6 @@ class App extends Component {
     fetch(`/api/v0/zillow/${address}/${cityStateZip}`)
       .then(res => res.json())
       .then(data => {
-        console.log('data', data);
         // Save the response to state
         this.setState({ 
           content: data,

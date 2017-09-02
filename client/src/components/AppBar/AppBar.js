@@ -12,7 +12,7 @@ function SimpleAppBar(props) {
   return (
     <div className={styles.root}>
       <AppBar 
-        title="Zillow Reader"
+        title="Zillow Search"
         iconStyleLeft={{ display: 'none' }}
       />
     </div>

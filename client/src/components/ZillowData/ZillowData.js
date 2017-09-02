@@ -1,8 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-
+import ZillowLinks from '../ZillowLinks/ZillowLinks';
+import ZillowAddress from '../ZillowAddress/ZillowAddress';
+import ZillowLocalRealEstate from '../ZillowLocalRealEstate/ZillowLocalRealEstate';
+import ZillowZestimate from '../ZillowZestimate/ZillowZestimate';
+import ZillowZpid from '../ZillowZpid/ZillowZpid';
 
 const style = {
   wrapper: {
@@ -10,7 +13,10 @@ const style = {
     maxWidth: '100%',
   },
   card: {
-    marginBottom: '20px'
+    margin: '10px'
+  },
+  label: {
+    textTransform: 'capitalize'
   },
   json: {
     width: 'auto',
@@ -29,43 +35,13 @@ const ZillowData = (props) => {
   // Destructure API data
   const { zpid, links, address, zestimate, localRealEstate } = data;
 
-  const linksMap = {
-    'homedetails': 'Home Details',
-    'graphsanddata': 'Graphs and Data',
-    'mapthishome': 'Map This Home',
-    'comparables': 'Comparables'
-  }
-  console.log('links', links[0]);
-
   return (
     <div style={style.wrapper}>
-      { links[0] &&
-        <Card style={style.card}>
-          <CardHeader title="Links" />
-          <CardText>
-            {Object.entries(links[0]).map((pair) => {
-              const key = pair[0];
-              const value = pair[1];
-              return( <FlatButton
-                key={key}
-                href={value[0]}
-                target="_blank"
-                label={linksMap[key] || key}
-                />)})}
-          </CardText>
-        </Card> }
-
-      {/* ZPID */}
-      <Card style={style.card}>
-        <CardHeader title="ZPID" />
-        <CardText>{zpid[0]}</CardText>
-      </Card>
-
-
-      {/* Raw Data */}
-      <div style={style.json}>
-        <pre>{JSON.stringify(data, null, 4)}</pre>
-      </div>
+      <ZillowZestimate data={zestimate[0]} />
+      <ZillowLinks links={links[0]} />
+      <ZillowAddress data={address[0]} />
+      <ZillowLocalRealEstate data={localRealEstate[0]} />
+      <ZillowZpid zpid={zpid[0]} />
     </div>
   );
   // TODO: reset button
@@ -75,6 +51,13 @@ ZillowData.propTypes = {
   data: propTypes.oneOfType([
     propTypes.string,
     propTypes.object
+    // propTypes.shape({
+    //   zpid: propTypes.object,
+    //   links: propTypes.object,
+    //   address: propTypes.object,
+    //   zestimate: propTypes.object,
+    //   localRealEstate: propTypes.object
+    // })
   ]),  
   reset: propTypes.func
 }
