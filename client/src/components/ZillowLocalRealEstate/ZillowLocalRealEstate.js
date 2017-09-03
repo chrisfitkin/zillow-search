@@ -11,7 +11,7 @@ import {
 
 const style = {
   card: {
-    margin: '10px'
+    margin: '20px 10px'
   },
   h2: {
     marginTop: '0px'

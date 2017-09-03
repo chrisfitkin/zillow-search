@@ -5,7 +5,7 @@ import FlatButton from 'material-ui/FlatButton';
 
 const style = {
   card: {
-    margin: '10px'
+    margin: '20px 10px'
   }
 }
 

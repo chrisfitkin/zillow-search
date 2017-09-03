@@ -5,8 +5,11 @@ import FlatButton from 'material-ui/FlatButton';
 import GooglePlaceAutocomplete from 'material-ui-places';
 
 const style = {
+  wrapper: {
+    margin: '0 10px 20px 10px'
+  },
   button: {
-    margin: '10px'
+    margin: '10px 10px 0 10px'
   }
 };
 
@@ -17,7 +20,7 @@ const SearchBar = (props) => {
   const restrictions = { country: ['us'] };
 
   return (
-    <div>
+    <div style={style.wrapper}>
       <GooglePlaceAutocomplete
         name="location"
         floatingLabelText="Your Address"
