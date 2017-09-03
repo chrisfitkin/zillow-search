@@ -2,6 +2,10 @@
   "name": "zillow-cf",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "7.10.0",
+    "npm": "5.3.0"
+  },
   "main": "app.js",
   "scripts": {
     "test": "PORT=5001 mocha -R spec spec.js ",
