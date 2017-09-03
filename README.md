@@ -59,3 +59,6 @@ Coding style generally adheres to AirBnB standards.  Next steps would be to incl
 
 ## Hosting (Demo)
 Demo is hosted on heroku at https://zillow-search.herokuapp.com
+
+## Bugs
+- Samsung internet browser throws generic javascript error when making API requests.  For mobile testing please use Chrome or Safari on iOS, or Chrome browser on Android devices..
