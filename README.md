@@ -43,12 +43,12 @@ Client is built in React.
 ### create-react-app
 create-react-app was used to generate boilerplate application structure.
 ### State Management
-State is managed primarily in a single App component using set state.  In a more complex application, I would implement Redux for state managements.
+State is managed primarily in a single App component using ```setState```.  In a more complex application, I would implement Redux for state management.
 ### Google Places Autocomplete
 The address search field implements Autocomplete functionality leveraging the Google Places API.
 
 ## Testing
-Basic integration testing is set up to show that the API server comes online, responds at the appropriate endpoints, and can connect to the Zillow API.  More unit testing for the backend would include mocks for the API.  No front end testing was written.  Tests can be run from the shell with the following commands.
+Basic integration testing is set up to show that the API server comes online, responds at the appropriate endpoints, and can connect to the Zillow API.  More unit testing for the backend would include mocks for the API.  No front end testing has been written, yet, but would be done with Enzyme.  Tests should also be integrated into the deployment process.  Tests can be run from the shell with the following commands.
 ```sh
 npm install -g mocha
 npm run test
