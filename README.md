@@ -47,15 +47,15 @@ State is managed primarily in a single App component using set state.  In a more
 ### Google Places Autocomplete
 The address search field implements Autocomplete functionality leveraging the Google Places API.
 
-### Testing
+## Testing
 Basic integration testing is set up to show that the API server comes online, responds at the appropriate endpoints, and can connect to the Zillow API.  More unit testing for the backend would include mocks for the API.  No front end testing was written.  Tests can be run from the shell with the following commands.
 ```sh
 npm install -g mocha
 npm run test
 ```
 
-### Code Style
+## Code Style
 Coding style generally adheres to AirBnB standards.  Next steps would be to include ESLint and linting rules to enforce standards.
 
-### Hosting (Demo)
+## Hosting (Demo)
 Demo is hosted on heroku at https://zillow-search.herokuapp.com
