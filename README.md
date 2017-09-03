@@ -3,7 +3,7 @@ TODO: Overview
 
 ## Run Locally
 TODO: prerequisites: NodeJS runtime environment
-TODO: git clone ... && npm install && 
+TODO: git clone ... && npm install && npm start
 
 ## Application Structure
 TODO
@@ -22,5 +22,11 @@ TODO
 
 ### Testing
 TODO
+```sh
+npm install -g mocha
+npm run test
+```
+
+### Code Style
 
 ### Hosting

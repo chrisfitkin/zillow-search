@@ -35,7 +35,7 @@ const getSearchResults = (address, cityStateZip) => {
       })
       .catch(function (err) {
         console.log("[ERROR] ", err);
-        resolve({ error: "Error connecting to Zillow API" });
+        resolve({ error: "Error connecting to Zillow API." });
       });
   });
 }

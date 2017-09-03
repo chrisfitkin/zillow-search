@@ -6,7 +6,7 @@ const router = express.Router();
 // Require controllers
 const zillowController = require('../controllers/zillowController');
 
-// Chris Routes
+// Zillow route
 router.get('/zillow/:address/:cityStateZip', zillowController.getAddressInfo);
 
 // Export routes

@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "PORT=5001 mocha -R spec spec.js ",
     "start": "node app.js",
     "dev": "nodemon app.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
@@ -21,6 +21,9 @@
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "chai": "^4.1.2",
+    "mocha": "^3.5.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
   }
 }

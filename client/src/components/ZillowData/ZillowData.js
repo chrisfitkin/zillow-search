@@ -1,6 +1,5 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import FlatButton from 'material-ui/FlatButton';
 import ZillowLinks from '../ZillowLinks/ZillowLinks';
 import ZillowAddress from '../ZillowAddress/ZillowAddress';
 import ZillowLocalRealEstate from '../ZillowLocalRealEstate/ZillowLocalRealEstate';
