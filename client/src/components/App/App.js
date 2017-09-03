@@ -9,6 +9,12 @@ import addressParser from 'parse-address';
 
 import './App.css';
 
+const customTheme = {
+  palette: {
+    primary1Color: '#0074e4'
+  }
+};
+
 class App extends Component {
   // Initialize state
   state = { 
@@ -74,12 +80,12 @@ class App extends Component {
     } else {
       const parts = addressParser.parseLocation(this.state.searchText);
       const line1 = ['number', 'prefix', 'street', 'type'];
-      parsed = {
+      parsed = parts ? {
         address: Object.keys(parts).reduce((address, key) => 
           line1.includes(key) ? `${address} ${parts[key]}` : address, '').trim(),
         cityStateZip: Object.keys(parts).reduce((cityStateZip, key) => 
           !line1.includes(key) ? `${cityStateZip}, ${parts[key]}` : cityStateZip, '').substring(2),
-      };
+      } : { address: null, cityStateZip: null };
     }
     return parsed;
   }
@@ -93,7 +99,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <MuiThemeProvider muiTheme={getMuiTheme(customTheme)}>
           <div>
             <AppBar />
             <div className="content">
