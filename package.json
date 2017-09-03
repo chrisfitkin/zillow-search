@@ -7,7 +7,7 @@
     "test": "PORT=5001 mocha -R spec spec.js ",
     "start": "node app.js",
     "dev-server": "nodemon app.js",
-    "dev-client": "cd client && npm start",
+    "dev-client": "cd client && npm install && npm start",
     "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run dev-client\"", 
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },

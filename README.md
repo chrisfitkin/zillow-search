@@ -8,7 +8,7 @@ details for that home from Zillow's GetSearchResults API.
 > requires: NodeJS - https://nodejs.org/en/download/
 ```sh
 git clone https://github.com/chrisfitkin/zillow-search
-npm install
+cd zillow-search && npm install
 npm run dev
 ```
 Application runs at ```http://localhost:3000```
