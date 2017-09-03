@@ -6,7 +6,9 @@
   "scripts": {
     "test": "PORT=5001 mocha -R spec spec.js ",
     "start": "node app.js",
-    "dev": "nodemon app.js",
+    "dev-server": "nodemon app.js",
+    "dev-client": "cd client && npm start",
+    "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run dev-client\"", 
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "keywords": [],
@@ -22,6 +24,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "concurrently": "^3.5.0",
     "mocha": "^3.5.0",
     "nodemon": "^1.11.0",
     "supertest": "^3.0.0"
